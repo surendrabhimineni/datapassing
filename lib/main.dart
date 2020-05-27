@@ -9,10 +9,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
       home: MyHomePage(),
     );
   }
@@ -24,8 +20,13 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.purple,
       appBar: AppBar(
-        title: Text("Home"),
+        backgroundColor: Colors.purple,
+        title: Text(
+          "Home",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -35,10 +36,14 @@ class MyHomePage extends StatelessWidget {
             children: <Widget>[
               Text(
                 "Enter the Name",
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
               ),
               TextField(
                 controller: namecontroller,
+                style: TextStyle(fontSize: 20, color: Colors.white),
               ),
               SizedBox(
                 height: 20,
@@ -81,7 +86,7 @@ class ScreenWelcome extends StatelessWidget {
       body: Center(
         child: Text(
           "Welcome $guestname",
-          style: TextStyle(fontSize: 20),
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
       ),
     );
